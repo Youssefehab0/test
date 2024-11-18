@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GadarModelStoreContainer" CdmEntityContainer="GadarEntities">
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="GadarModel.Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="T_id" ColumnName="T_id" />
+          <ScalarProperty Name="T_title" ColumnName="T_title" />
+          <ScalarProperty Name="T_desc" ColumnName="T_desc" />
+          <ScalarProperty Name="T_status" ColumnName="T_status" />
+          <ScalarProperty Name="T_duedata" ColumnName="T_duedata" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GadarModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+          <ScalarProperty Name="U_name" ColumnName="U_name" />
+          <ScalarProperty Name="U_password" ColumnName="U_password" />
+          <ScalarProperty Name="U_email" ColumnName="U_email" />
+          <ScalarProperty Name="U_role" ColumnName="U_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

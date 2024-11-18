@@ -1,0 +1,33 @@
+﻿<Page x:Class="Gadara.Login_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gadara"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="Login_page">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\youssef.ehab\Desktop\Youssef_Ehab_Hassan_0523029\Gadara\Gadara\Screenshot 2024-11-17 085308.png"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="119*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="128*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Welcome in Login page" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Foreground="White" Height="26" Margin="183,0,0,0" Width="134"/>
+        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Style="{StaticResource sl}" Height="26" Margin="202,0,0,0" Width="48"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Foreground="Black" Height="26" Width="165" Margin="10,0,0,0"/>
+        <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Style="{StaticResource sl}" Height="26" Margin="183,0,0,0" Width="67"/>
+        <TextBox x:Name="txtpassword" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Foreground="Black" Height="26" Width="165" Margin="5,0,0,0"/>
+        <Button x:Name="Loginbutton" Content="Login" HorizontalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" FontSize="15" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="184" Height="37" Click="Loginbutton_Click"/>
+        <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="248" Margin="68,0,0,0" Grid.RowSpan="3" Grid.Row="1" VerticalAlignment="Top" Width="410"/>
+    </Grid>
+</Page>

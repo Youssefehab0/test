@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GadarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="T_id" />
+    </Key>
+    <Property Name="T_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="T_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="T_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="T_status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="T_duedata" Type="DateTime" Precision="3" />
+    <Property Name="U_id" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Tasks__U_id__3A81B327" FromRole="Tasks" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="U_id" />
+    </Key>
+    <Property Name="U_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="U_password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="U_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="U_role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__U_id__3A81B327" FromRole="Users" ToRole="Tasks" />
+  </EntityType>
+  <Association Name="FK__Tasks__U_id__3A81B327">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_id" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="U_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GadarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Tasks__U_id__3A81B327" Association="Self.FK__Tasks__U_id__3A81B327">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
