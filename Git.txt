@@ -1,0 +1,7 @@
+git config --global user.name Youssefehab0
+git config --global user.email youssef.0523029@gmail.com
+git init
+git add *
+ git commit -m "test"
+git remote add origin https://github.com/Youssefehab0/test.git
+git push origin master
